@@ -2,6 +2,7 @@
 
 #include <stdint.h>
 #include <stdio.h>
+#include <assert.h>
 
 #define internal        static
 #define local_persist   static
@@ -72,17 +73,29 @@ internal void PrintString(DT_String string)
 */
 /* Defines the struct + getter for one element type. */
 
-#define DT_ARRAY(T)                                        \
-    typedef struct {                                       \
-        T*  items;                                         \
-        i32 length;                                        \
-        i32 capacity;                                      \
-    } T##Array;                                            \
-    internal T T##Array_Get(T##Array array, i32 index)     \
-    {                                                      \
-        if (index >= 0 && index < array.length)            \
-            return array.items[index];                     \
-        return (T)0;                                        \
+#define DT_ARRAY(T)                                                    \
+    typedef struct {                                                   \
+        T*  items;                                                     \
+        i32 length;                                                    \
+        i32 capacity;                                                  \
+    } T##Array;                                                        \
+                                                                       \
+    internal T T##Array_Get(T##Array array, i32 index)                 \
+    {                                                                  \
+        assert(index >= 0 && index < array.length);                    \
+        return array.items[index];                                     \
+    }                                                                  \
+                                                                       \
+    internal void T##Array_Set(T##Array array, i32 index, T value)     \
+    {                                                                  \
+        assert(index >= 0 && index < array.length);                    \
+        array.items[index] = value;                                    \
+    }                                                                  \
+                                                                       \
+    internal void T##Array_Push(T##Array* array, T value)              \
+    {                                                                  \
+        assert(array->length < array->capacity);                       \
+        array->items[array->length++] = value;                         \
     }
 
 DT_ARRAY(i8)
