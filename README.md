@@ -44,10 +44,9 @@ ducttape provides this for all int and float types:
 `i8 i16 i32 i64`, `u8 u16 u32 u64`, `f32 f64`.
 
 ## Strings
-`DT_String`is a length aware string that stores a char* and a length rather than relying on a null terminator.
-
+`DT_String`is a length aware string that stores a char* and a length rather than relying on a null terminator.\
 It's taken from Nic Barkers [Tips For C Programming](https://youtu.be/9UIIMBqq1D4)
 ## Macros
-internal/local_persist/global_variable
+internal/local_persist/global_variable\
 These and the typedefs are taken from Casey Muratori's Handmade Hero
 
