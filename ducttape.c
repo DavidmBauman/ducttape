@@ -31,6 +31,14 @@ typedef struct {
     i32   length;
 } DT_String;
 
+internal DT_String StringFromCString(char* cstr)
+{
+    i32 len = 0;
+    while(cstr[len]) len++;
+    return(DT_String){ cstr, len };
+}
+
+// Compile time definition of DT_Strings
 #define STR(literal) (DT_String){ (literal), (i32)(sizeof(literal) - 1) }
 
 /* Usage:
