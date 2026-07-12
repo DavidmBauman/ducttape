@@ -1,0 +1,33 @@
+# ---- Tool Belt .gitignore ----
+
+# Tests
+tests.c
+a.exe
+d.pdb
+*.bat
+
+# Build output
+build/
+*.o
+*.obj
+*.so
+*.a
+*.lib
+*.dll
+*.exe
+*.out
+
+# Debug / editor
+.vscode/
+*.pdb
+*.ilk
+*.idb
+
+# clangd
+.cache/
+compile_commands.json
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
