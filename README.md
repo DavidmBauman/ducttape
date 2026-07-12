@@ -17,7 +17,7 @@ Here's a cheap way to fix those array access issues. We'll just pop on a bounds-
 And remember, if the women don't find you handsome, they should at least find you handy.
 
 ## Overview
-'ducttape.c' is a single file, dependency free C utility library. It provides length based strings, bounds checked arrays, sized integer and float typedefs, along with a handful of conveniece macros.
+`ducttape.c` is a single file, dependency free C utility library. It provides length based strings, bounds checked arrays, sized integer and float typedefs, along with a handful of conveniece macros.
 
 It's written in unity build style. Just include 'ducttape.c' directly into the file rather than compiling and linking it separately.
 
@@ -40,8 +40,8 @@ internal i32 i32Array_Get(i32Array array, i32 index)
 }
 
 ducttape provides this for all int and float types:
-i8 i16 i32 i64`, `u8 u16 u32 u64`, `f32 f64`.
+`i8 i16 i32 i64`, `u8 u16 u32 u64`, `f32 f64`.
 
 ## Macros
 
-'internal'/'local_persist'/'global_variable'
+internal/local_persist/global_variable
